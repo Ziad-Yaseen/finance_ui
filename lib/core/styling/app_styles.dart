@@ -28,4 +28,16 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.greyColor,
   );
+  static TextStyle textFieldStyle = TextStyle(
+    fontFamily: AppFonts.mainFont,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.secondaryColor,
+  );
+  static TextStyle textStyle = TextStyle(
+    fontFamily: AppFonts.mainFont,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.textColor,
+  );
 }

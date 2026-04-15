@@ -1,100 +1,77 @@
 import 'package:finance_ui/core/styling/app_colors.dart';
+import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomTextField extends StatefulWidget {
+class CustomTextField extends StatelessWidget {
   const CustomTextField({
-    this.borderRadius = 8,
-    this.bordersWidth = 1,
-    this.color = AppColors.txtFieldFillColor,
-    this.radiusColor = AppColors.txtFieldStrokeColor,
-    this.width = 331,
-    this.height,
-    this.isPassword = false,
     super.key,
-    required this.hint,
+    this.showPasswordIcon = false,
+    this.height = 56,
+    this.width = 331,
+    this.hint = 'Hint',
+    this.fillColor = AppColors.txtFieldFillColor,
+    this.strokeColor = AppColors.txtFieldStrokeColor,
+    this.cursorColor = AppColors.primaryColor,
+    this.icon = Icons.remove_red_eye_outlined,
+    this.borderRadius = 8,
+    this.onPressed,
+    this.password = false,
   });
-
-  final String hint;
-  final bool isPassword;
+  final bool showPasswordIcon;
+  final double height;
   final double width;
-  final double? height;
-  final Color color;
-  final Color radiusColor;
+  final String hint;
+  final Color fillColor;
+  final Color strokeColor;
+  final Color cursorColor;
+  final IconData icon;
   final double borderRadius;
-  final double bordersWidth;
-
-  @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
-}
-
-class _CustomTextFieldState extends State<CustomTextField> {
-  late bool isPassword = widget.isPassword;
+  final VoidCallback? onPressed;
+  final bool password;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: widget.width.w,
-      height: widget.height?.h,
+      width: width.w,
+      height: height.h,
       child: TextField(
-        autofocus: false,
-        cursorColor: AppColors.primaryColor,
+        obscureText: password,
         onTapOutside: (event) {
           FocusManager.instance.primaryFocus?.unfocus();
         },
-        keyboardType: widget.isPassword
-            ? TextInputType.visiblePassword
-            : TextInputType.text,
-        enableSuggestions: !widget.isPassword,
-        autocorrect: !widget.isPassword,
-        obscureText: isPassword,
+        autofocus: false,
+        cursorColor: cursorColor,
         decoration: InputDecoration(
-          filled: true,
-          hintText: widget.hint,
-          hintStyle: TextStyle(
-            fontSize: 15.sp,
-            letterSpacing: isPassword ? 5.0 : 0.0,
-            fontWeight: FontWeight.w500,
-            color: AppColors.secondaryColor,
-          ),
-          fillColor: AppColors.txtFieldFillColor,
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: 18.w,
-            vertical: 18.h,
-          ),
+          hintText: hint,
+          hintStyle: AppStyles.textFieldStyle,
+          contentPadding: EdgeInsets.all(18),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.borderRadius.r),
-            borderSide: BorderSide(
-              color: AppColors.txtFieldStrokeColor,
-              width: widget.bordersWidth,
-            ),
+            borderRadius: BorderRadius.circular(borderRadius.r),
+            borderSide: BorderSide(color: strokeColor, width: 1),
           ),
+          filled: true,
+          fillColor: fillColor,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.borderRadius.r),
+            borderRadius: BorderRadius.circular(borderRadius.r),
             borderSide: BorderSide(
-              color: AppColors.primaryColor.withValues(alpha: 0.5),
-              width: widget.bordersWidth,
+              color: AppColors.primaryColor.withValues(alpha: 0.6),
+              width: 1,
             ),
           ),
-          suffixIcon: widget.isPassword
+          suffixIcon: showPasswordIcon
               ? IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isPassword = !isPassword;
-                    });
-                  },
-                  icon: FaIcon(
-                    isPassword
-                        ? FontAwesomeIcons.eye
-                        : FontAwesomeIcons.eyeSlash,
+                  icon: Icon(
+                    password ? icon : Icons.visibility_off_outlined,
+                    size: 24.sp,
                     color: AppColors.iconColor,
-                    size: 20.sp,
                   ),
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
+                  onPressed: onPressed,
                 )
               : null,
+        ),
+        style: AppStyles.textFieldStyle.copyWith(
+          color: AppColors.blackTxtColor,
         ),
       ),
     );

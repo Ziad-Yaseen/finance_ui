@@ -1,9 +1,8 @@
-import 'package:finance_ui/core/components/custom_text_field.dart';
-import 'package:finance_ui/core/components/primary_btn.dart';
-import 'package:finance_ui/core/components/primary_outlined_btn.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:finance_ui/core/styling/app_assets.dart';
+import 'package:finance_ui/core/components/primary_b_t_n.dart';
+import 'package:finance_ui/core/components/primary_outlined_b_t_n.dart';
+import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,19 +12,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              PrimaryBtn(txt: 'Login', onPressed: () {}),
-              SizedBox(height: 20.h),
-              PrimaryOutlinedBtn(txt: 'Login', onPressed: () {}),
-              SizedBox(height: 20.h),
-              CustomTextField(hint: 'Login', height: 51, isPassword: true),
+              Image.asset(AppAssets.mainHomeImage, width: double.infinity),
+              Spacer(),
+              PrimaryBTN(txt: 'Login', onPressed: () {}),
+              Spacer(),
+              PrimaryOutlinedBTN(txt: 'Register', onPressed: () {}),
+              Spacer(flex: 2),
+              Text('Continue as a guest', style: AppStyles.textStyle),
+              Spacer(),
             ],
           ),
         ),
