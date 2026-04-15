@@ -29,6 +29,7 @@ class _HomeState extends State<Home> {
               Spacer(flex: 2),
               Text('Continue as a guest', style: AppStyles.textStyle),
               Spacer(),
+              Spacer(),
             ],
           ),
         ),
