@@ -33,7 +33,7 @@ class PrimaryBTN extends StatelessWidget {
         ),
         fixedSize: Size(width.w, height.h),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         txt,
         style: TextStyle(

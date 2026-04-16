@@ -8,7 +8,7 @@ class MainCard extends StatelessWidget {
     this.borderRadius = 12,
     this.horizontalPadding = 37,
     this.verticalPadding = 15,
-    required this.child
+    required this.child,
   });
   final double borderRadius;
   final double verticalPadding;
