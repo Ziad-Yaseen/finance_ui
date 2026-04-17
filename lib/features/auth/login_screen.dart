@@ -1,8 +1,12 @@
+import 'package:finance_ui/core/components/custom_text_field.dart';
+import 'package:finance_ui/features/auth/components/login_with.dart';
 import 'package:finance_ui/core/components/main_card.dart';
+import 'package:finance_ui/core/components/primary_b_t_n.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool password = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
         bottom: false,
         right: false,
         child: Padding(
-          padding: const EdgeInsets.only(left: 22),
+          padding: const EdgeInsets.symmetric(horizontal: 22),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,16 +33,67 @@ class _LoginScreenState extends State<LoginScreen> {
               MainCard(
                 horizontalPadding: 12,
                 verticalPadding: 12,
-                child: Icon(
+                onPressed: () {
+                  GoRouter.of(context).pop();
+                },
+                child: const Icon(
                   Icons.arrow_back_ios_new_rounded,
                   color: AppColors.primaryColor,
                 ),
               ),
               SizedBox(height: 28.h),
-              Text(
-                'Welcome back! Again!',
-                style: AppStyles.primaryHeadlineText,
+              SizedBox(
+                width: 280.w,
+                child: Text(
+                  'Welcome back! Again!',
+                  style: AppStyles.primaryHeadlineText,
+                ),
               ),
+              SizedBox(height: 32.h),
+              const CustomTextField(hint: 'Enter your email'),
+              SizedBox(height: 15.h),
+              CustomTextField(
+                hint: 'Enter your password',
+                password: password,
+                showPasswordIcon: true,
+                onPressed: () => setState(() {
+                  password = !password;
+                }),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Forgot Password?',
+                  style: AppStyles.forgotPasswordStyle,
+                ),
+              ),
+              SizedBox(height: 30.h),
+              PrimaryBTN(txt: 'Login', onPressed: () {}),
+              SizedBox(height: 35.h),
+              LoginWith(
+                onPressedFacebook: () {},
+                onPressedGoogle: () {},
+                onPressedApple: () {},
+              ),
+              const Spacer(),
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Don\' have an account? ',
+                    style: AppStyles.primaryHeadlineText.copyWith(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Register Now',
+                        style: AppStyles.textStyle,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 26.h),
             ],
           ),
         ),

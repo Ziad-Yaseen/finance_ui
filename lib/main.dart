@@ -17,6 +17,7 @@ class Finance extends StatelessWidget {
       builder: (context, child) => MaterialApp.router(
         theme: AppThemes.lightTheme,
         routerConfig: RouterGenerationConfig.goRouter,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

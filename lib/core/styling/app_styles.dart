@@ -40,4 +40,10 @@ class AppStyles {
     fontWeight: FontWeight.w700,
     color: AppColors.textColor,
   );
+  static TextStyle forgotPasswordStyle = TextStyle(
+    fontFamily: AppFonts.mainFont,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.iconColor,
+  );
 }
