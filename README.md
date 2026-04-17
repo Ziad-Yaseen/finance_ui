@@ -4,7 +4,10 @@ A modern, responsive, and feature-rich digital wallet application designed to he
 
 ## 📱 App Preview
 *(Drag and drop your complete UI preview image here)*
-![App Screens](preview.png)
+![App Screens](appicon.png)
+<p align="center">
+  <img src="preview.png" width="22%" alt="Welcome Screen">
+</p>
 
 ## ✨ Key Features
 
