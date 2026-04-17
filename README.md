@@ -3,10 +3,10 @@
 A modern, responsive, and feature-rich digital wallet application designed to help users manage their personal finances, track expenses, and perform daily transactions with ease. 
 
 ## 📱 App Preview
-*(Drag and drop your complete UI preview image here)*
 ![App Screens](appicon.png)
 <p align="center">
   <img src="preview.png" width="22%" alt="Welcome Screen">
+  <img src="preview2.png" width="22%" alt="Welcome Screen">
 </p>
 
 ## ✨ Key Features
