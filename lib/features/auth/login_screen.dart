@@ -1,9 +1,11 @@
 import 'package:finance_ui/core/components/custom_text_field.dart';
+import 'package:finance_ui/features/auth/components/app_back_button.dart';
 import 'package:finance_ui/features/auth/components/login_with.dart';
 import 'package:finance_ui/core/components/main_card.dart';
 import 'package:finance_ui/core/components/primary_b_t_n.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
+import 'package:finance_ui/features/auth/components/main_header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -30,25 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              MainCard(
-                horizontalPadding: 12,
-                verticalPadding: 12,
-                onPressed: () {
-                  GoRouter.of(context).pop();
-                },
-                child: const Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  color: AppColors.primaryColor,
-                ),
-              ),
+              AppBackButton(),
               SizedBox(height: 28.h),
-              SizedBox(
-                width: 280.w,
-                child: Text(
-                  'Welcome back! Again!',
-                  style: AppStyles.primaryHeadlineText,
-                ),
-              ),
+              MainHeaderText('Welcome back! Again!'),
               SizedBox(height: 32.h),
               const CustomTextField(hint: 'Enter your email'),
               SizedBox(height: 15.h),

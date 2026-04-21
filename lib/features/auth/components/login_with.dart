@@ -32,7 +32,7 @@ class LoginWith extends StatelessWidget {
                 color: AppColors.txtFieldStrokeColor,
               ),
             ),
-            Text('Or Login With', style: AppStyles.forgotPasswordStyle),
+            Text(text, style: AppStyles.forgotPasswordStyle),
             Expanded(
               child: Divider(
                 indent: 12.w,

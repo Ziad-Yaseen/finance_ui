@@ -30,7 +30,12 @@ class OnBoardingScreen extends StatelessWidget {
                 },
               ),
               Spacer(),
-              PrimaryOutlinedBTN(txt: 'Register', onPressed: () {}),
+              PrimaryOutlinedBTN(
+                txt: 'Register',
+                onPressed: () {
+                  GoRouter.of(context).pushNamed(AppRoutes.registerScreen);
+                },
+              ),
               Spacer(flex: 2),
               Text(
                 'Continue as a guest',
