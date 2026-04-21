@@ -7,6 +7,7 @@ A modern, responsive, and feature-rich digital wallet application designed to he
 <p align="center">
   <img src="preview.png" width="22%" alt="Welcome Screen">
   <img src="preview2.png" width="22%" alt="Welcome Screen">
+  <img src="preview3.png" width="22%" alt="Welcome Screen">
 </p>
 
 ## ✨ Key Features
