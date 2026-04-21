@@ -6,8 +6,9 @@ A modern, responsive, and feature-rich digital wallet application designed to he
 ![App Screens](appicon.png)
 <p align="center">
   <img src="preview.png" width="22%" alt="Welcome Screen">
-  <img src="preview2.png" width="22%" alt="Welcome Screen">
-  <img src="preview3.png" width="22%" alt="Welcome Screen">
+  <img src="preview2.png" width="22%" alt="Login Screen">
+  <img src="preview3.png" width="22%" alt="Register Screen">
+  <img src="preview4.png" width="22%" alt="Forgot Password Screen">
 </p>
 
 ## ✨ Key Features
