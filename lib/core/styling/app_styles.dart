@@ -46,4 +46,11 @@ class AppStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.iconColor,
   );
+
+  static TextStyle subtext = TextStyle(
+    fontFamily: AppFonts.mainFont,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.secondaryColor
+  );
 }
