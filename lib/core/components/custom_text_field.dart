@@ -7,8 +7,8 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     this.showPasswordIcon = false,
-    this.height = 56,
-    this.width = 331,
+    this.height,
+    this.width,
     this.hint = 'Hint',
     this.fillColor = AppColors.txtFieldFillColor,
     this.strokeColor = AppColors.txtFieldStrokeColor,
@@ -17,10 +17,12 @@ class CustomTextField extends StatelessWidget {
     this.borderRadius = 8,
     this.onPressed,
     this.password = false,
+    this.controller,
+    this.validator,
   });
   final bool showPasswordIcon;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final String hint;
   final Color fillColor;
   final Color strokeColor;
@@ -29,13 +31,17 @@ class CustomTextField extends StatelessWidget {
   final double borderRadius;
   final VoidCallback? onPressed;
   final bool password;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width.w,
-      height: height.h,
-      child: TextField(
+      width: width,
+      height: height,
+      child: TextFormField(
+        controller: controller,
+        validator: validator,
         obscureText: password,
         onTapOutside: (event) {
           FocusManager.instance.primaryFocus?.unfocus();
@@ -58,6 +64,14 @@ class CustomTextField extends StatelessWidget {
               color: AppColors.primaryColor.withValues(alpha: 0.6),
               width: 1,
             ),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius.r),
+            borderSide: BorderSide(color: AppColors.errorColor, width: 1),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius.r),
+            borderSide: BorderSide(color: AppColors.errorColor, width: 1),
           ),
           suffixIcon: showPasswordIcon
               ? IconButton(

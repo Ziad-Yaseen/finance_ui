@@ -2,6 +2,7 @@ import 'package:finance_ui/core/components/custom_text_field.dart';
 import 'package:finance_ui/core/routing/app_routes.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/features/auth/components/app_back_button.dart';
+import 'package:finance_ui/features/auth/components/down_text.dart';
 import 'package:finance_ui/features/auth/components/login_with.dart';
 import 'package:finance_ui/core/components/primary_b_t_n.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
@@ -18,7 +19,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final formKey = GlobalKey<FormState>();
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
   bool password = false;
+
+  @override
+  void initState() {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,68 +40,86 @@ class _LoginScreenState extends State<LoginScreen> {
         right: false,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppBackButton(),
-              SizedBox(height: 28.h),
-              MainHeaderText('Welcome back! Again!'),
-              SizedBox(height: 32.h),
-              const CustomTextField(hint: 'Enter your email'),
-              SizedBox(height: 15.h),
-              CustomTextField(
-                hint: 'Enter your password',
-                password: password,
-                showPasswordIcon: true,
-                onPressed: () => setState(() {
-                  password = !password;
-                }),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(50),
-                  overlayColor: WidgetStatePropertyAll(
-                    AppColors.primaryColor.withValues(alpha: 0.1),
-                  ),
-                  onTap: () {
-                    GoRouter.of(context).pushNamed(AppRoutes.forgetPassword);
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppBackButton(),
+                SizedBox(height: 28.h),
+                MainHeaderText('Welcome back! Again!'),
+                SizedBox(height: 32.h),
+                CustomTextField(
+                  hint: 'Enter your email',
+                  controller: emailController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    return null;
                   },
-                  child: Text(
-                    'Forgot Password?',
-                    style: AppStyles.forgotPasswordStyle,
-                  ),
                 ),
-              ),
-              SizedBox(height: 30.h),
-              PrimaryBTN(txt: 'Login', onPressed: () {}),
-              SizedBox(height: 35.h),
-              LoginWith(
-                onPressedFacebook: () {},
-                onPressedGoogle: () {},
-                onPressedApple: () {},
-              ),
-              const Spacer(),
-              Center(
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Don\' have an account? ',
-                    style: AppStyles.primaryHeadlineText.copyWith(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
+                SizedBox(height: 15.h),
+                CustomTextField(
+                  controller: passwordController,
+                  hint: 'Enter your password',
+                  password: password,
+                  showPasswordIcon: true,
+                  onPressed: () => setState(() {
+                    password = !password;
+                  }),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    if (value.length < 8) {
+                      return 'Password must be at least 8 characters';
+                    }
+                    return null;
+                  },
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(50),
+                    overlayColor: WidgetStatePropertyAll(
+                      AppColors.primaryColor.withValues(alpha: 0.1),
                     ),
-                    children: [
-                      TextSpan(
-                        text: 'Register Now',
-                        style: AppStyles.textStyle,
-                      ),
-                    ],
+                    onTap: () {
+                      GoRouter.of(context).pushNamed(AppRoutes.forgetPassword);
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: AppStyles.forgotPasswordStyle,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 26.h),
-            ],
+                SizedBox(height: 30.h),
+                PrimaryBTN(
+                  txt: 'Login',
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {}
+                  },
+                ),
+                SizedBox(height: 35.h),
+                LoginWith(
+                  onPressedFacebook: () {},
+                  onPressedGoogle: () {},
+                  onPressedApple: () {},
+                ),
+                const Spacer(),
+                DownText(
+                  text1: 'Don\' have an account? ',
+                  text2: 'Register Now',
+                  onPressed: () {
+                    GoRouter.of(context).pushNamed(AppRoutes.registerScreen);
+                  },
+                ),
+
+                SizedBox(height: 26.h),
+              ],
+            ),
           ),
         ),
       ),

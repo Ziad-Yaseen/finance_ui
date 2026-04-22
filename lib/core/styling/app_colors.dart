@@ -10,4 +10,5 @@ class AppColors {
   static const Color txtFieldStrokeColor = Color(0xFFE8ECF4);
   static const Color iconColor = Color(0xFF6A707C);
   static const Color textColor = Color(0xff202955);
+  static const Color errorColor = Color(0xffdc3545);
 }
