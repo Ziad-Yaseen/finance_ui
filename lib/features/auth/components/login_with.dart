@@ -47,7 +47,6 @@ class LoginWith extends StatelessWidget {
           children: [
             Expanded(
               child: MainCard(
-                rightMargin: 4,
                 onPressed: onPressedFacebook,
                 child: SvgPicture.asset(
                   AppAssets.facebook,
@@ -56,10 +55,9 @@ class LoginWith extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(width: 8.w),
             Expanded(
               child: MainCard(
-                rightMargin: 4,
-                leftMargin: 4,
                 onPressed: onPressedGoogle,
                 child: SvgPicture.asset(
                   AppAssets.google,
@@ -68,9 +66,9 @@ class LoginWith extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(width: 8.w),
             Expanded(
               child: MainCard(
-                leftMargin: 4,
                 onPressed: onPressedApple,
                 child: SvgPicture.asset(
                   AppAssets.apple,

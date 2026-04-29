@@ -19,6 +19,7 @@ class CustomTextField extends StatelessWidget {
     this.password = false,
     this.controller,
     this.validator,
+    this.onChange
   });
   final bool showPasswordIcon;
   final double? height;
@@ -33,6 +34,7 @@ class CustomTextField extends StatelessWidget {
   final bool password;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final VoidCallback? onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,9 @@ class CustomTextField extends StatelessWidget {
       width: width,
       height: height,
       child: TextFormField(
+        onChanged: (value) {
+          onChange;
+        },
         controller: controller,
         validator: validator,
         obscureText: password,
