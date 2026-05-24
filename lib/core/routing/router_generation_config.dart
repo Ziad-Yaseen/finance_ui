@@ -2,6 +2,7 @@ import 'package:finance_ui/core/routing/app_routes.dart';
 import 'package:finance_ui/features/auth/create_new_password_screen.dart';
 import 'package:finance_ui/features/auth/forget_password.dart';
 import 'package:finance_ui/features/auth/login_screen.dart';
+import 'package:finance_ui/features/verify_otp/otp_verification_screen.dart';
 import 'package:finance_ui/features/auth/password_changed.dart';
 import 'package:finance_ui/features/auth/register_screen.dart';
 import 'package:finance_ui/features/on%20boarding%20screen/on_boarding_screen.dart';
@@ -45,6 +46,12 @@ class RouterGenerationConfig {
         path: AppRoutes.passwordChanged,
         name: AppRoutes.passwordChanged,
         builder: (context, state) => const PasswordChanged(),
+      ),
+
+      GoRoute(
+        path: AppRoutes.otp,
+        name: AppRoutes.otp,
+        builder: (context, state) => const OtpVerificationScreen(),
       ),
     ]
   );

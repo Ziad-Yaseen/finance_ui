@@ -2,7 +2,7 @@ import 'package:finance_ui/core/components/custom_text_field.dart';
 import 'package:finance_ui/core/components/primary_b_t_n.dart';
 import 'package:finance_ui/core/routing/app_routes.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
-import 'package:finance_ui/features/auth/components/app_back_button.dart';
+import 'package:finance_ui/core/components/app_back_button.dart';
 import 'package:finance_ui/features/auth/components/down_text.dart';
 import 'package:finance_ui/features/auth/components/main_header_text.dart';
 import 'package:flutter/material.dart';

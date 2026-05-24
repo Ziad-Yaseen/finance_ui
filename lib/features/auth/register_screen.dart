@@ -1,7 +1,7 @@
 import 'package:finance_ui/core/components/custom_text_field.dart';
 import 'package:finance_ui/core/components/primary_b_t_n.dart';
 import 'package:finance_ui/core/routing/app_routes.dart';
-import 'package:finance_ui/features/auth/components/app_back_button.dart';
+import 'package:finance_ui/core/components/app_back_button.dart';
 import 'package:finance_ui/features/auth/components/down_text.dart';
 import 'package:finance_ui/features/auth/components/login_with.dart';
 import 'package:finance_ui/features/auth/components/main_header_text.dart';
@@ -129,7 +129,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           PrimaryBTN(
                             txt: 'Register',
                             onPressed: () {
-                              if (formKey.currentState!.validate()) {}
+                              if (formKey.currentState!.validate()) {
+                                
+                              }
+                              GoRouter.of(context).pushNamed(AppRoutes.otp);
                             },
                           ),
                           SizedBox(height: 35.h),
