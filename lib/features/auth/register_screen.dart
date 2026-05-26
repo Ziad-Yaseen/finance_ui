@@ -129,9 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           PrimaryBTN(
                             txt: 'Register',
                             onPressed: () {
-                              if (formKey.currentState!.validate()) {
-                                
-                              }
+                              if (formKey.currentState!.validate()) {}
                               GoRouter.of(context).pushNamed(AppRoutes.otp);
                             },
                           ),

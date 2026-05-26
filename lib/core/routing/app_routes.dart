@@ -6,4 +6,5 @@ class AppRoutes {
   static const String createNewPasswordScreen = '/createNewPasswordScreen';
   static const String passwordChanged = '/passwordChanged';
   static const String otp = '/otp';
+  static const String home = '/home';
 }

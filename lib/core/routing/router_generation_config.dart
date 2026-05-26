@@ -6,6 +6,7 @@ import 'package:finance_ui/features/verify_otp/otp_verification_screen.dart';
 import 'package:finance_ui/features/auth/password_changed.dart';
 import 'package:finance_ui/features/auth/register_screen.dart';
 import 'package:finance_ui/features/on%20boarding%20screen/on_boarding_screen.dart';
+import 'package:finance_ui/screens/home.dart';
 import 'package:go_router/go_router.dart';
 
 class RouterGenerationConfig {
@@ -53,6 +54,12 @@ class RouterGenerationConfig {
         name: AppRoutes.otp,
         builder: (context, state) => const OtpVerificationScreen(),
       ),
-    ]
+
+      GoRoute(
+        path: AppRoutes.home,
+        name: AppRoutes.home,
+        builder: (context, state) => const Home(),
+      ),
+    ],
   );
 }

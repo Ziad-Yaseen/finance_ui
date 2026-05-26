@@ -70,6 +70,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                   txt: 'Send Code',
                   onPressed: () {
                     if (formKey.currentState!.validate()) {}
+                    GoRouter.of(
+                      context,
+                    ).pushNamed(AppRoutes.createNewPasswordScreen);
                   },
                 ),
                 const Spacer(),
