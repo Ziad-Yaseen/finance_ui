@@ -53,4 +53,18 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.secondaryColor
   );
+
+  static TextStyle bottomNvBarActive = TextStyle(
+    fontFamily: AppFonts.mainFont,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blackTxtColor
+  );
+
+  static TextStyle bottomNvBarInactive = TextStyle(
+    fontFamily: AppFonts.mainFont,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    color: AppColors.greyColor
+  );
 }

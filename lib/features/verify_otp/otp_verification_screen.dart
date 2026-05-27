@@ -81,7 +81,7 @@ class _LoginScreenState extends State<OtpVerificationScreen> {
                           PrimaryBTN(
                             txt: 'Verify',
                             onPressed: () {
-                              GoRouter.of(context).pushNamed(AppRoutes.home);
+                              GoRouter.of(context).pushNamed(AppRoutes.main);
                             },
                           ),
                         ],
