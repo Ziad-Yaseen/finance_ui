@@ -61,10 +61,11 @@ class AppStyles {
     color: AppColors.blackTxtColor
   );
 
-  static TextStyle bottomNvBarInactive = TextStyle(
+  static TextStyle black18semibold = TextStyle(
     fontFamily: AppFonts.mainFont,
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w500,
-    color: AppColors.greyColor
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.blackColor
   );
+
 }

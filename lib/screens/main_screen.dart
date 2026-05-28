@@ -1,3 +1,4 @@
+import 'package:finance_ui/core/components/main_app_bar.dart';
 import 'package:finance_ui/core/styling/app_assets.dart';
 import 'package:finance_ui/core/styling/app_colors.dart';
 import 'package:finance_ui/core/styling/app_styles.dart';
@@ -89,6 +90,7 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
+      appBar: MainAppBar.mainAppBar(currentIndex, 'Ziad Yaseen'),
       body: IndexedStack(index: currentIndex, children: screen),
     );
   }
@@ -120,7 +122,7 @@ class _MainScreenState extends State<MainScreen> {
               label,
               style: isActive
                   ? AppStyles.bottomNvBarActive
-                  : AppStyles.bottomNvBarInactive,
+                  : AppStyles.grey12medium,
             ),
           ],
         ),

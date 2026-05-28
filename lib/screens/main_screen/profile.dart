@@ -1,5 +1,3 @@
-import 'package:finance_ui/core/styling/app_colors.dart';
-import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
@@ -7,23 +5,22 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.yellow,
-              alignment: Alignment.center,
-              child: Text(
-                'Profile',
-                style: AppStyles.primaryHeadlineText.copyWith(
-                  color: AppColors.whiteColor,
-                ),
+    return Scaffold(
+      backgroundColor: Colors.amber,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Profile Screen',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

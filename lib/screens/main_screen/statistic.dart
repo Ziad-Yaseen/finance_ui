@@ -1,5 +1,3 @@
-import 'package:finance_ui/core/styling/app_colors.dart';
-import 'package:finance_ui/core/styling/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class Statistic extends StatelessWidget {
@@ -7,23 +5,22 @@ class Statistic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.green,
-              alignment: Alignment.center,
-              child: Text(
-                'Statistic',
-                style: AppStyles.primaryHeadlineText.copyWith(
-                  color: AppColors.whiteColor,
-                ),
+    return Scaffold(
+      backgroundColor: Colors.amber,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Statistic Screen',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
