@@ -1,11 +1,12 @@
 import 'package:finance_ui/screens/main_screen/data/visa_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({
+class VisaCard extends StatelessWidget {
+  const VisaCard({
     super.key,
-    required this.visaData
+    required this.visaData,
   });
 
   final VisaData visaData;
@@ -13,28 +14,28 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 207.w,
-      height: 263.h,
+      width: 327.w,
+      height: 190.h,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: visaData.cardColor,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(24.r),
       ),
       child: Stack(
         children: [
           Positioned(
-            left: -79.w,
-            top: 62.h,
+            left: -40.w,
+            bottom: -90.h,
             child: Container(
-              width: 277.w,
-              height: 277.h,
+              width: 230.w,
+              height: 230.h,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
                   colors: [
-                    Colors.white.withValues(alpha: 0.10),
+                    Colors.white.withValues(alpha: 0.15),
                     Colors.white.withValues(alpha: 0.0),
                   ],
                 ),
@@ -43,18 +44,18 @@ class CustomCard extends StatelessWidget {
           ),
 
           Positioned(
-            left: -17.w,
-            top: 124.h,
+            left: 20.w,
+            bottom: -100.h,
             child: Container(
-              width: 153.w,
-              height: 153.h,
+              width: 170.w,
+              height: 170.h,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
                   colors: [
-                    Colors.white.withValues(alpha: 0.10),
+                    Colors.white.withValues(alpha: 0.12),
                     Colors.white.withValues(alpha: 0.0),
                   ],
                 ),
@@ -63,18 +64,24 @@ class CustomCard extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  '${visaData.cardLetter.toUpperCase()}-Card',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '${visaData.cardLetter.toUpperCase()}-Card',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SvgPicture.asset(visaData.brandAsset!, height: 20.h),
+                  ],
                 ),
 
                 Column(
@@ -83,9 +90,9 @@ class CustomCard extends StatelessWidget {
                     Text(
                       'Balance',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
+                        color: Colors.white.withValues(alpha: 0.4),
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                     SizedBox(height: 4.h),
@@ -93,7 +100,7 @@ class CustomCard extends StatelessWidget {
                       '${visaData.balance} EG',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 24.sp,
+                        fontSize: 26.sp,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -106,18 +113,18 @@ class CustomCard extends StatelessWidget {
                     Text(
                       '**** ${visaData.last4Numbers}',
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1.5,
+                        color: Colors.white.withValues(alpha: 0.4),
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 2.0,
                       ),
                     ),
                     Text(
                       visaData.date,
                       style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.7),
+                        color: Colors.white.withValues(alpha: 0.8),
                         fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],

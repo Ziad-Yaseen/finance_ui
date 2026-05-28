@@ -12,6 +12,9 @@ A modern, responsive, and feature-rich digital wallet application designed to he
   <img src="preview3.png" width="22%" alt="Register Screen">
   <img src="preview4.png" width="22%" alt="Forgot Password Screen">
   <img src="preview5.png" width="22%" alt="Pin Code Verification Screen">
+  <img src="preview6.png" width="22%" alt="Main Screen, Home">
+  <img src="preview7.png" width="22%" alt="Main Screen, My cards">
+  <img src="preview8.png" width="22%" alt="Main Screen, Profile">
 </p>
 
 ## ✨ Key Features
