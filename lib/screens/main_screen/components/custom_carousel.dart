@@ -25,8 +25,13 @@ class _CustomCarouselState extends State<CustomCarousel> {
             viewportFraction: 0.65,
             enlargeCenterPage: true,
             enlargeFactor: 0.2,
-            onPageChanged: (index, reason) =>
-                setState(() => position = index.toDouble()),
+            onScrolled: (value) {
+              if (value != null) {
+                setState(() {
+                  position = value % 5;
+                });
+              }
+            },
           ),
           items: const [
             CustomCard(
