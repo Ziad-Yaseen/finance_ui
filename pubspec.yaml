@@ -39,6 +39,8 @@ dependencies:
   go_router: ^17.2.1
   flutter_svg: ^2.2.4
   pin_code_fields: ^9.3.0
+  carousel_slider: ^5.1.2
+  dots_indicator: ^4.0.1
 
 
 dev_dependencies:

@@ -12,4 +12,5 @@ class AppColors {
   static const Color iconColor = Color(0xFF6A707C);
   static const Color textColor = Color(0xff202955);
   static const Color errorColor = Color(0xffdc3545);
+  static const Color greyIndicator = Color(0xFFE3E9ED);
 }
