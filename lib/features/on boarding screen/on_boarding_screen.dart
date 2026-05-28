@@ -37,10 +37,17 @@ class OnBoardingScreen extends StatelessWidget {
                 },
               ),
               Spacer(flex: 2),
-              Text(
-                'Continue as a guest',
-                style: AppStyles.textStyle.copyWith(
-                  decoration: TextDecoration.underline,
+              InkWell(
+                borderRadius: BorderRadius.circular(12),
+                onTap: () => GoRouter.of(context).pushNamed(AppRoutes.main),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Text(
+                    'Continue as a guest',
+                    style: AppStyles.textStyle.copyWith(
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
                 ),
               ),
               Spacer(),
