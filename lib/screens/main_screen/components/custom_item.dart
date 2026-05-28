@@ -10,10 +10,12 @@ class CustomItem extends StatelessWidget {
     required this.asset,
     required this.title,
     required this.subtitle,
+    this.left = false,
   });
   final String asset;
   final String title;
   final String subtitle;
+  final bool left;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +26,20 @@ class CustomItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ColoredContainerWithIcon(asset: asset),
+          Align(
+            alignment: left ? Alignment.topLeft : Alignment.center,
+            child: ColoredContainerWithIcon(asset: asset),
+          ),
           SizedBox(height: 12.h),
-          Text(title, style: AppStyles.black16w600),
+          Align(
+            alignment: left ? Alignment.topLeft : Alignment.center,
+            child: Text(title, style: AppStyles.black16w600),
+          ),
           SizedBox(height: 3.h),
-          Text(subtitle, style: AppStyles.grey12medium),
+          Align(
+            alignment: left ? Alignment.topLeft : Alignment.center,
+            child: Text(subtitle, style: AppStyles.grey12medium),
+          ),
         ],
       ),
     );

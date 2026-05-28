@@ -37,10 +37,10 @@ class MainAppBar {
             )
           : Text(
               (index == 1)
-                  ? 'Statistic'
+                  ? 'Reload'
                   : (index == 3)
-                  ? 'My Card'
-                  : 'Profile',
+                  ? 'All Cards'
+                  : 'My Profile',
               style: AppStyles.black18semibold,
             ),
 

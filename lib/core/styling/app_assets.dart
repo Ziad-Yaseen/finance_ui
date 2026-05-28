@@ -5,8 +5,11 @@ class AppAssets {
   static const String visa = 'assets/images/icons/svg/visa1.svg';
   static const String google = 'assets/images/icons/svg/google.svg';
   static const String apple = 'assets/images/icons/svg/apple.svg';
+  static const String upload = 'assets/images/icons/svg/Upload.svg';
+  static const String download = 'assets/images/icons/svg/Download.svg';
   static const String success = 'assets/images/icons/svg/sticker.svg';
   static const String send = 'assets/images/icons/svg/Send.svg';
+  static const String arrow = 'assets/images/icons/svg/arrowiosdownwardoutline.svg';
   static const String notifications =
       'assets/images/icons/svg/notifications.svg';
   static const String dots = 'assets/images/icons/svg/dots.svg';

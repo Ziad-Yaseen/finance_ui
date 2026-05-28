@@ -15,6 +15,7 @@ A modern, responsive, and feature-rich digital wallet application designed to he
   <img src="preview6.png" width="22%" alt="Main Screen, Home">
   <img src="preview7.png" width="22%" alt="Main Screen, My cards">
   <img src="preview8.png" width="22%" alt="Main Screen, Profile">
+  <img src="preview9.png" width="22%" alt="Main Screen, Statistic">
 </p>
 
 ## ✨ Key Features

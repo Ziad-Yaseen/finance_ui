@@ -15,4 +15,6 @@ class AppColors {
   static const Color greyIndicator = Color(0xFFE3E9ED);
   static const Color lightPrimary = Color(0xFFECF1F6);
   static const Color lightDivider = Color(0xFFF2F2F5);
+  static const Color lightPurple = Color(0xFFB9C4FF);
+  static const Color grey = Color(0xFFE2E0E4);
 }
