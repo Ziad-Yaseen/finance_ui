@@ -22,21 +22,21 @@ class OnBoardingScreen extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
-              Spacer(),
+              const Spacer(),
               PrimaryBTN(
                 txt: 'Login',
                 onPressed: () {
                   GoRouter.of(context).pushNamed(AppRoutes.loginScreen);
                 },
               ),
-              Spacer(),
+              const Spacer(),
               PrimaryOutlinedBTN(
                 txt: 'Register',
                 onPressed: () {
                   GoRouter.of(context).pushNamed(AppRoutes.registerScreen);
                 },
               ),
-              Spacer(flex: 2),
+              const Spacer(flex: 2),
               InkWell(
                 borderRadius: BorderRadius.circular(12),
                 onTap: () => GoRouter.of(context).pushNamed(AppRoutes.main),
@@ -50,7 +50,7 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

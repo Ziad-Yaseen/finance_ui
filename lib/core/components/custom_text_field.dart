@@ -56,7 +56,7 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: AppStyles.textFieldStyle,
-          contentPadding: EdgeInsets.all(18),
+          contentPadding: const EdgeInsets.all(18),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius.r),
             borderSide: BorderSide(color: strokeColor, width: 1),
@@ -72,11 +72,11 @@ class CustomTextField extends StatelessWidget {
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius.r),
-            borderSide: BorderSide(color: AppColors.errorColor, width: 1),
+            borderSide: const BorderSide(color: AppColors.errorColor, width: 1),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius.r),
-            borderSide: BorderSide(color: AppColors.errorColor, width: 1),
+            borderSide: const BorderSide(color: AppColors.errorColor, width: 1),
           ),
           suffixIcon: showPasswordIcon
               ? IconButton(

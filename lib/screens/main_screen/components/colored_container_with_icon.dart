@@ -11,11 +11,11 @@ class ColoredContainerWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
-      child: SvgPicture.asset(asset, width: 24.w, height: 24.w),
       decoration: BoxDecoration(
         color: AppColors.lightPrimary,
         borderRadius: BorderRadius.circular(12),
       ),
+      child: SvgPicture.asset(asset, width: 24.w, height: 24.w),
     );
   }
 }

@@ -48,9 +48,9 @@ class _LoginScreenState extends State<OtpVerificationScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AppBackButton(),
+                          const AppBackButton(),
                           SizedBox(height: 28.h),
-                          MainHeaderText('OTP Verification', width: 331),
+                          const MainHeaderText('OTP Verification', width: 331),
                           SizedBox(height: 10.h),
                           Text(
                             'Enter the verification code we just sent on your email address.',
