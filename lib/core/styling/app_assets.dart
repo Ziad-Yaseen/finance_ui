@@ -5,11 +5,13 @@ class AppAssets {
   static const String google = 'assets/images/icons/svg/google.svg';
   static const String apple = 'assets/images/icons/svg/apple.svg';
   static const String success = 'assets/images/icons/svg/sticker.svg';
+  static const String send = 'assets/images/icons/svg/Send.svg';
   static const String notifications =
       'assets/images/icons/svg/notifications.svg';
   static const String dots = 'assets/images/icons/svg/dots.svg';
   static const String pencil = 'assets/images/icons/svg/edit_square.svg';
   static const String homeActive = 'assets/images/icons/svg/Home_active.svg';
+  static const String users = 'assets/images/icons/svg/users.svg';
   static const String homeInActive =
       'assets/images/icons/svg/Home_inactive.svg';
   static const String statisticActive =
